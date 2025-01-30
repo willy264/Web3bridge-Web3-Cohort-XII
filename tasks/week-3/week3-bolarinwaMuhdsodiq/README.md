@@ -15,5 +15,6 @@ npx hardhat ignition deploy ./ignition/modules/Lock.js
 deploy to sepolia 0x6Ef8DEF34141c92042730bd1D147349Bf742B3e3,
 meter deploy 0xBcf10944F377D397E570a44C2db32c25DbC6Bb46,
 Amoy Polygon deployed to 0x6f3cf8b8E37d510a58956CEEc3Da0d62217b5DbE,
+deploy to lisk 0x6f3cf8b8E37d510a58956CEEc3Da0d62217b5DbE
 
 
