@@ -1,13 +1,19 @@
-# Sample Hardhat Project
+# Ballot Smart Contract Deployment
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+**Deployed Chains**
 
-Try running some of the following tasks:
+The contract has been deployed to the following blockchain networks:
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+1. **Sepolia Testnet**  
+   - Deployment Address: ` 0x523cB4907A1482c9282068b756D6B6c1Ad01593e`
+
+2. **Polygon Amoy Testnet**  
+   - Deployment Address: `0x5546d563C3A1Cff7Aa1d119D7126C5a62Da3944c`
+  
+3. **Lisk Sepolia**  
+   - Deployment Address: `TBD`
+   - issue: insufficient fund for deployment. requested fund from their faucet but it wasn't delivered.
+  
+4. **Meter**  
+   - Deployment Address: `TBD`
+   - issue: Please wait until they get 5 confirmations before running Hardhat Ignition again.
