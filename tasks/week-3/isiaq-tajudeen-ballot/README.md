@@ -1,13 +1,14 @@
-# Sample Hardhat Project
+# Sepolia network deployment details;
+Contract address: 0x1a947cCdB4E5731676543e973BD8ff4C6F51E2F5
+Verified link: https://sepolia.etherscan.io/address/0x1a947cCdB4E5731676543e973BD8ff4C6F51E2F5#code
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+# Lisk sepolia network deployment details;
+Contract address: 0x234c7c29B22bdB16E16A8C3eB75514622094e1f4
+Verified link: https://sepolia-blockscout.lisk.com/address/0x234c7c29B22bdB16E16A8C3eB75514622094e1f4#code
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+# Polygon amoy network deployment details;
+Contract address: 0x234c7c29B22bdB16E16A8C3eB75514622094e1f4
+Verified link: Not verified
+# Meter network deployment details;
+Contract address:
+Verified link: Not deployed yet
