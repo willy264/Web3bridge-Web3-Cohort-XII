@@ -5,7 +5,6 @@ require("dotenv").config();
 const {
   ACCOUNT_PRIVATE_KEY,
   ALCHEMY_SEPOLIA_API_KEY_URL,
-  ALCHEMY_METER_API_KEY_URL,
   ALCHEMY_AMOY_API_KEY_URL,
   ETHERSCAN_API_KEY,
 } = process.env;
