@@ -11,8 +11,7 @@ The contract has been deployed to the following blockchain networks:
    - Deployment Address: `0x5546d563C3A1Cff7Aa1d119D7126C5a62Da3944c`
   
 3. **Lisk Sepolia**  
-   - Deployment Address: `TBD`
-   - issue: insufficient fund for deployment. requested fund from their faucet but it wasn't delivered.
+   - Deployment Address: `0xCaA3A0Fe5E67A97FE170cEd4850a0C009b899646`
   
 4. **Meter**  
    - Deployment Address: `TBD`
