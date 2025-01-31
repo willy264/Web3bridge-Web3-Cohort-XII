@@ -1,13 +1,26 @@
-# Sample Hardhat Project
+# Hands-on Practice with Hardhat
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Task Details
 
-Try running some of the following tasks:
+**Task Name:** Hands-on Practice with Hardhat  
+**Task Description:** Deploy the `Ballot.sol` smart contract to 4 different chains using Hardhat:
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
+- Amoy
+- Lisk Sepolia
+- Sepolia (verified the contract)
+- Meter
+
+## Deployed Contract Addresses
+
+- **Amoy:** `0x563093915cc3F436632c849bad3E8517a926bC09`
+- **Lisk Sepolia:** `0x563093915cc3F436632c849bad3E8517a926bC09`
+- **Sepolia:** `0xeDD0c78a283D2a652dEcd7aD9e06F3fc7b958802` (Verified)
+- **Meter:** `0x3D2e2a1F09228F99969688F69c1825256099e0E4`
+
+## Verified Contract
+
+[View Verified Contract on Sepolia](https://sepolia.etherscan.io/address/0xeDD0c78a283D2a652dEcd7aD9e06F3fc7b958802#code)
+
+## Deployment Script
+
+Used a `deploy.ts` script to deploy the contract to the Meter network.
