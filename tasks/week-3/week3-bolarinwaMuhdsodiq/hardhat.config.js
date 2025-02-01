@@ -1,6 +1,8 @@
 
 require("@nomicfoundation/hardhat-toolbox");
 const dotenv = require("dotenv")
+require("solidity-coverage");
+require("@nomicfoundation/hardhat-verify");
 dotenv.config();
 // Amoy
 // Lisk Sepolia
@@ -11,6 +13,8 @@ dotenv.config();
 
 const deployerPrivateKey =
   process.env.DEPLOYER_PRIVATE_KEY;
+const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
+
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.28",
@@ -40,5 +44,13 @@ module.exports = {
       url: "https://rpctest.meter.io",
       accounts: [deployerPrivateKey],
     }
-  }
+  },
+  etherscan: {
+    apiKey: `${etherscanApiKey}`,
+  },
+  verify: {
+    etherscan: {
+      apiKey: `${etherscanApiKey}`,
+    },
+  },
 };
