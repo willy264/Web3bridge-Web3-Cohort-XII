@@ -58,6 +58,86 @@ This project demonstrates the use of key Solidity concepts such as data types, c
 
 ---
 
+## Solidity Concepts Used
+
+### 1. **Data Types**
+   - **Strings**: Used for task descriptions.
+   - **uint256**: Used for deadlines, pledge amounts, and task IDs.
+   - **address**: Used for user and charity wallet addresses.
+   - **bool**: Used to track task completion status.
+
+### 2. **Constructor**
+   - The constructor initializes the contract deployer as the owner.
+   - Example:
+     ```solidity
+     constructor() {
+         owner = msg.sender;
+     }
+     ```
+
+### 3. **Modifiers**
+   - **`onlyOwner`**: Restricts access to functions that only the owner can call (e.g., adding/removing charities).
+   - **`onlyTaskCreator`**: Ensures only the task creator can mark a task as completed.
+   - Example:
+     ```solidity
+     modifier onlyOwner() {
+         require(msg.sender == owner, "Only the owner can call this function");
+         _;
+     }
+     ```
+
+### 4. **Functions**
+   - **`createTask`**: Allows users to create tasks with a description and deadline.
+   - **`completeTask`**: Allows users to mark tasks as completed.
+   - **`donatePledge`**: Donates the pledged amount to a charity if the task is not completed.
+   - **`addCharity` and `removeCharity`**: Allows the owner to manage approved charities.
+
+### 5. **Mappings**
+   - **`tasks`**: Maps task IDs to task details (stored as structs).
+   - **`approvedCharities`**: Maps charity addresses to a boolean indicating approval status.
+   - Example:
+     ```solidity
+     mapping(uint256 => Task) public tasks;
+     mapping(address => bool) public approvedCharities;
+     ```
+
+### 6. **Structs**
+   - **`Task`**: Stores task details such as description, deadline, pledge amount, completion status, and creator address.
+   - Example:
+     ```solidity
+     struct Task {
+         string description;
+         uint256 deadline;
+         uint256 pledgeAmount;
+         bool isCompleted;
+         address creator;
+     }
+     ```
+
+### 7. **Error Handling**
+   - **`require` Statements**: Used to validate inputs and conditions.
+     - Example:
+       ```solidity
+       require(bytes(_description).length > 0, "Task description cannot be empty");
+       require(_deadline > block.timestamp, "Deadline must be in the future");
+       ```
+
+### 8. **Events**
+   - **`TaskCreated`**: Emitted when a new task is created.
+   - **`TaskCompleted`**: Emitted when a task is marked as completed.
+   - **`PledgeDonated`**: Emitted when a pledge is donated to a charity.
+   - Example:
+     ```solidity
+     event TaskCreated(uint256 taskId, address creator, string description, uint256 deadline, uint256 pledgeAmount);
+     ```
+
+---
+
+## Real-World Use Case
+TaskPledge addresses the problem of accountability in task completion. By introducing a financial incentive (pledge amount) and a penalty mechanism (donation to charity), it encourages users to complete their tasks on time while supporting charitable causes.
+
+---
+
 ## Deployment
 - The contract is deployed on the Sepolia testnet.
 - The contract is verified on Etherscan for transparency.
