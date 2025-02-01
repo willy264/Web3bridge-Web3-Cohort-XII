@@ -3,7 +3,7 @@ import "@nomicfoundation/hardhat-toolbox";
 require("dotenv").config();
 
 
-const {ALCHEMY_SEPOLIA_API_KEY_URL, ACCOUNT_PRIVATE_KEY} = process.env;
+const {ALCHEMY_SEPOLIA_API_KEY_URL, ACCOUNT_PRIVATE_KEY,ETHERSCAN_API_KEY} = process.env;
 
 
 const config: HardhatUserConfig = {
@@ -16,8 +16,10 @@ const config: HardhatUserConfig = {
       url: ALCHEMY_SEPOLIA_API_KEY_URL,
       accounts: [`0x${ACCOUNT_PRIVATE_KEY}`]
     },
-   
-  }
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
+  },
 };
 
 
