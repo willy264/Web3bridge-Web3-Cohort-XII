@@ -1,5 +1,5 @@
-// const cardNumber = "6500041049870541"
-const cardNumber = "5061240202002103058"
+// const cardNumber = "5061240202002103058"
+const cardNumber = "6500041049870542"
 const cardNumberArray = cardNumber.split("")
 
 if (cardNumberArray.length < 16) {
