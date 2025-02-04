@@ -16,4 +16,4 @@
 
 Built using **HTML, CSS, and JavaScript**.
 
-### Bolaji Oluwatobi.
+### Bolaji Oluwatobi
