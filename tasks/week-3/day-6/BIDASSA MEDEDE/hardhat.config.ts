@@ -2,7 +2,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 require("dotenv").config();
 
-const {ALCHEMY_SEPOLIA_API_KEY_URL, ACCOUNT_PRIVATE_KEY,ETHERSCAN_API_KEY} = process.env;
+const {ALCHEMY_TCORE_API_KEY_URL, ACCOUNT_PRIVATE_KEY,ETHERSCAN_API_KEY,ALCHEMY_SEPOLIA_API_KEY_URL} = process.env;
 
 
 const config: HardhatUserConfig = {
