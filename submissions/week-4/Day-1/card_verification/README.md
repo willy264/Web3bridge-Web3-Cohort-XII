@@ -48,7 +48,7 @@ The card number is valid.
 Enter a 16-digit card number: 1234567890123456
 The card number is invalid.
 
-Notes
+Notes:
 
 Ensure the card number entered is exactly 16 digits.
 
