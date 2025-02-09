@@ -16,7 +16,7 @@ interface IERC20 {
 contract CECE is IERC20 {
     string public name;
     string public symbol;
-    uint8 public decimals = 18;
+    uint8 public decimals = 18; 
 
     uint256 private _totalSupply;
     mapping(address => uint256) private _balances;
