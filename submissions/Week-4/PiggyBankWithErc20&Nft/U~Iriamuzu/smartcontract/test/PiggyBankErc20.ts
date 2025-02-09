@@ -11,7 +11,7 @@ describe("PiggyBankErc20", function () {
 
     let ADDRESS_ZERO = "0x0000000000000000000000000000000000000000";
 
-    const [owner, tokenHolder] = await hre.ethers.getSigners();
+    const [owner, tokenHolder, contributors] = await hre.ethers.getSigners();
     // const Token = await hre.ethers.getContractFactory("MyERC20Token"); // for testing with MyERC20Token
 
     // for testing with ERC20 using OpenZeppelin
@@ -28,10 +28,11 @@ describe("PiggyBankErc20", function () {
       targetAmount,
       withdrawalDate,
       token.target, // address of the token
-      owner.address
+      owner.address, // address of the owner
+      contributors
     );
 
-    return { deployedPiggyBank, token, owner, tokenHolder, ADDRESS_ZERO };
+    return { deployedPiggyBank, token, owner, tokenHolder, ADDRESS_ZERO, contributors };
   }
 
   describe("Deployment", function () {
@@ -41,4 +42,27 @@ describe("PiggyBankErc20", function () {
 
       expect(runner.address).to.equal(owner.address);    });
   });
+
+  describe('Deposit', function () {
+    it('should accept contributions', async function () {
+        const { deployedPiggyBank, token, tokenHolder, contributors } = await loadFixture(deployPiggyBankContract);
+
+        const contributionBefore = await token.balanceOf(deployedPiggyBank.address);
+
+        const contribution = hre.ethers.parseEther("1");
+
+        await token.transfer(contributors.address, contribution); 
+        await token.connect(contributors).approve(deployedPiggyBank.address, contribution); 
+        // console.log("Token Address:", token.target); // <-- Add this line
+        await deployedPiggyBank.connect(contributors).deposit(contribution, { value: 0 });
+       
+
+        const contributionAfter = await token.balanceOf(deployedPiggyBank.address);
+
+        // console.log("contributionBefore: ", contributionBefore.toString());
+        // console.log("contributionAfter: ", contributionAfter.toString());
+
+        // expect(contributionAfter).to.be.greaterThanOrEqual(contributionBefore);
+    });
+});
 });
